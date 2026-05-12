@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>INPE - Área de Educación</title>
+    <style>
+        :root {
+            --fondo-negro: #050505;
+            --tarjeta-gris: #121212;
+            --dorado-inpe: #c5a059;
+            --texto-blanco: #ffffff;
+            --texto-suave: #a0a0a0;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--fondo-negro);
+            color: var(--texto-blanco);
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVEGACIÓN --- */
+        nav {
+            background: rgba(0, 0, 0, 0.95);
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            position: sticky;
+            top: 0;
+            border-bottom: 1px solid #222;
+            z-index: 1000;
+        }
+
+        .nav-links { display: flex; list-style: none; margin: 0; padding: 0; }
+        .nav-links li { position: relative; }
+        
+        .nav-links a, .dropbtn {
+            color: var(--texto-blanco);
+            text-decoration: none;
+            padding: 25px 15px;
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover, .dropdown:hover .dropbtn { color: var(--dorado-inpe); }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #111;
+            min-width: 250px;
+            border: 1px solid #222;
+            top: 70px;
+        }
+
+        .dropdown-content a {
+            padding: 15px;
+            text-transform: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #222;
+        }
+
+        .dropdown-content a img { width: 30px; }
+        .dropdown:hover .dropdown-content { display: block; }
+
+        /* --- MANEJO DE SECCIONES --- */
+        .content-section {
+            display: none;
+            padding: 60px 20px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .content-section.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        /* --- DISEÑO DE EQUIPO (NUEVA ESTRUCTURA) --- */
+        .equipo-contenedor {
+            background: var(--tarjeta-gris);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #222;
+            margin-bottom: 40px;
+        }
+
+        .equipo-titulo {
+            color: var(--dorado-inpe);
+            border-bottom: 2px solid var(--dorado-inpe);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        .grid-dos-columnas {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card-docente {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border: 1px solid #333;
+        }
+
+        .card-docente img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--dorado-inpe);
+        }
+
+        .docente-info h4 { margin: 0; font-size: 1rem; color: #fff; }
+        .docente-info p { margin: 2px 0; font-size: 0.85rem; color: var(--dorado-inpe); }
+        .trayectoria-mini { font-size: 0.75rem; color: var(--texto-suave); font-style: italic; }
+
+        /* --- OTROS ESTILOS --- */
+        .box-info {
+            background: var(--tarjeta-gris);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--dorado-inpe);
+        }
+
+        footer { text-align: center; padding: 40px; border-top: 1px solid #222; font-size: 0.8rem; }
+
+        @media (max-width: 800px) {
+            .grid-dos-columnas { grid-template-columns: 1fr; }
+            .card-docente { flex-direction: column; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <div id="header-placeholder"></div> <div class="container"></div>
+<div class="container">
+    
+            <section id="inicio" class="content-section active">
+            <div style="text-align: center; padding: 60px 0;">
+                <img src="img/lg_inpe.png" width="180" style="margin-bottom: 20px;">
+                <h1 style="letter-spacing: 4px; font-size: 3rem; margin-bottom: 10px;">ÁREA DE EDUCACIÓN</h1>
+                <p style="color: var(--dorado-inpe); font-weight: bold; text-transform: uppercase; letter-spacing: 2px;">"Reeducar para la Libertad"</p>
+                
+                <div style="display: grid; grid-template-columns: repeat(2, 280px); justify-content: center; gap: 30px; margin-top: 50px;">
+    
+                    <a href="ceba.html" style="text-decoration: none; color: inherit;">
+                        <div class="equipo-contenedor" style="padding: 40px 20px; cursor: pointer; transition: transform 0.3s; margin-bottom: 0; text-align: center;">
+                            <img src="img/lg_ceba.png" width="120" style="margin-bottom: 15px;">
+                            <h2 style="color: var(--dorado-inpe); font-size: 1.1rem; margin: 10px 0 5px 0;">CEBA</h2>
+                            <p style="font-size: 1.5rem; color: var(--texto-suave);">Bicentenario</p>
+                        </div>
+                    </a>
+
+                    <a href="cetpro.html" style="text-decoration: none; color: inherit;">
+                        <div class="equipo-contenedor" style="padding: 40px 20px; cursor: pointer; transition: transform 0.3s; margin-bottom: 0; text-align: center;">
+                            <img src="img/lg_cetpro.png" width="120" style="margin-bottom: 15px;">
+                            <h2 style="color: var(--dorado-inpe); font-size: 1.1rem; margin: 10px 0 5px 0;">CETPRO</h2>
+                            <p style="font-size: 1.5rem; color: var(--texto-suave);">Virgen del Carmen</p>
+                        </div>
+                    </a>
+
+                    <a href="universidad.html" style="text-decoration: none; color: inherit;">
+                        <div class="equipo-contenedor" style="padding: 40px 20px; cursor: pointer; transition: transform 0.3s; margin-bottom: 0; text-align: center;">
+                            <img src="img/lg_uni.png" width="120" style="margin-bottom: 15px;">
+                            <h2 style="color: var(--dorado-inpe); font-size: 1.1rem; margin: 10px 0 5px 0;">UNIVERSIDAD</h2>
+                            <p style="font-size: 1.5rem; color: var(--texto-suave);">Continental</p>
+                        </div>
+                    </a>
+
+                    <a href="musica.html" style="text-decoration: none; color: inherit;">
+                        <div class="equipo-contenedor" style="padding: 40px 20px; cursor: pointer; transition: transform 0.3s; margin-bottom: 0; text-align: center;">
+                            <img src="img/lg_orq.png" width="120" style="margin-bottom: 15px;">
+                            <h2 style="color: var(--dorado-inpe); font-size: 1.1rem; margin: 10px 0 5px 0;">MÚSICA</h2>
+                            <p style="font-size: 1.5rem; color: var(--texto-suave);">Orquestando</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    <section id="nosotros" class="content-section">
+        <h2 style="color: var(--dorado-inpe);">NUESTRA IDENTIDAD</h2>
+        <div class="box-info" style="border-left-color: #fff;">
+            <h3>Palabras de la Directora</h3>
+            <div style="display: flex; gap: 20px; align-items: center;">
+                <img src="img/dir.png" width="100" style="border-radius: 10px;">
+                <p style="text-align: justify;"><i>"La educación no es solo impartir conocimientos; es el primer paso para la resocialización, la esperanza y la construcción de un nuevo camino. En el INPE, entendemos que la educación es un derecho fundamental que dignifica y abre oportunidades.
+<br><br>En este 2026, nuestro equipo docente y administrativo trabaja con vocación para garantizar que cada aula en nuestros penales sea un espacio de respeto, valores y crecimiento. Nos enfocamos en el aprendizaje a lo largo de la vida, convirtiendo el tiempo de reclusión en tiempo de oportunidad.
+<br><br>La educación es la herramienta más poderosa para la verdadera resocialización. 
+<br><br>Mediante el tratamiento peniteciario se busca que contribuya eficazmnete a la reeducación, rehabilitación y reincorporación del interno a la sociedad.
+<br><br>¡Acompañenos en este camino de cambio!"</i><br><br><b>Mg. Indirha Bustios Blanco</b></p>
+            </div>
+        </div>
+        <div class="box-info"><h3>Misión</h3><p style="text-align: justify;">Ser una institución líder, licenciada que brinda apoyo y educación técnica de calidad, con profesores calificados, que garanticen la reinserción a la sociedad de los estudiantes internos en el mercado laboral o generando el auto empleo mediante la formación de talleres y/o microempresas.
+Contar con una infraestructura adecuada y equipada para cada opción ocupacional que se desarrolla, y brindar a la población interna una formación acorde a los avances tecnológicos.
+</p></div>
+        <div class="box-info"><h3>Visión</h3><p style="text-align: justify;">como una institución educativa acreditada o licenciada que forma integralmente a los estudiantes desarrollando sus potencialidades, competencias laborales y empresariales en una perspectiva de desarrollo sostenible, competitivo y humano, así como a la promoción de la cultura innovadora que responda a la demanda del sector productivo y a los avances de la tecnología, el desarrollo local, regional y nacional.  Que resuelvan problemas, practiquen valores, demuestra su autonomía, asume el rol del ciudadano con derechos y responsabilidades con ética, respetando la diversidad cultural en armonía con el ambiente natural y artificial acorde a los avances de la ciencia y tecnología.
+Tomando en cuenta la ley general de educación 28044, Art. 66 y Art. 98 Lograr que todos los estudiantes culminen los módulos y cursos ocupacionales, que permiten al estudiante interno la adquisición de competencias terminales, con valor y significado en el mundo del trabajo, facilitando su movilidad y adaptabilidad laboral, con una formación integral, desarrollen su proyecto de emprendimiento, practiquen valores, fortalezcan sus competencias y ejerzan su ciudadanía, en un ambiente acogedor, espacios seguros, inclusivos de sana convivencia y libre convivencia. 
+</p></div>
+    </section>
+
+    <section id="equipo" class="content-section">
+        
+        <div class="equipo-contenedor">
+            <h2 class="equipo-titulo">Área Administrativa</h2>
+            <div class="grid-dos-columnas">
+                <div class="card-docente" style="border: 2px solid var(--dorado-inpe);">
+                    <img src="img/dir.png">
+                    <div class="docente-info">
+                        <h4>Mg. INDIRHA BUSTIOS BLANCO</h4>
+                        <p>Directora del Área de Educación</p>
+                        <span class="trayectoria-mini">Gestión y liderazgo educativo.</span>
+                    </div>
+                </div>
+                <div class="card-docente">
+                    <img src="img/adm.png">
+                    <div class="docente-info">
+                        <h4>MARINO CCALLOCUNTO NÚÑEZ</h4>
+                        <p>Personal Administrativo</p>
+                        <span class="trayectoria-mini">Coordinación Académica y de Gestión.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="equipo-contenedor">
+            <h2 class="equipo-titulo">Plana Docente - CEBA "Bicentenario"</h2>
+            <div class="grid-dos-columnas">
+                <div class="card-docente">
+                    <img src="img/docv_001.png">
+                    <div class="docente-info">
+                        <h4>JORGE ANTONIO AGUADO LIMACO</h4>
+                        <p>Comunicación</p>
+                        <span class="trayectoria-mini">Especialista en EBA AVANZADO.</span>
+                    </div>
+                </div>
+                <div class="card-docente">
+                    <img src="img/docm_001.png">
+                    <div class="docente-info">
+                        <h4>MARISOL AVENDAÑO GUTIÉRREZ</h4>
+                        <p>Matemática</p>
+                        <span class="trayectoria-mini">Especialista en EBA AVANZADO.</span>
+                    </div>
+                </div>
+                <div class="card-docente">
+                    <img src="img/docm_001.png">
+                    <div class="docente-info">
+                        <h4>PATRICIA ASUNTA BARZOLA CHAUCA</h4>
+                        <p>Desarrollo Personal y Ciudadanía</p>
+                        <span class="trayectoria-mini">Especialista en EBA AVANZADO.</span>
+                    </div>
+                </div>
+                <div class="card-docente">
+                    <img src="img/docm_001.png">
+                    <div class="docente-info">
+                        <h4>ELSA HUALLANCA AYALA</h4>
+                        <p>Ciencia, Tecnología y Salud</p>
+                        <span class="trayectoria-mini">Especialista en EBA AVANZADO.</span>
+                    </div>
+                </div>
+                <div class="card-docente">
+                    <img src="img/docv_001.png">
+                    <div class="docente-info">
+                        <h4>RUBEN PALOMINO FLORES</h4>
+                        <p>Educación Física</p>
+                        <span class="trayectoria-mini">Especialista en EBA AVANZADO.</span>
+                    </div>
+                </div>                
+                <div class="card-docente">
+                    <img src="img/docm_001.png">
+                    <div class="docente-info">
+                        <h4>CRISTA MAYA PRADO PERALTA</h4>
+                        <p>Comunicación</p>
+                        <span class="trayectoria-mini">Especialista en EBA AVANZADO.</span>
+                    </div>
+                </div>
+                <div class="card-docente">
+                    <img src="img/docm_001.png">
+                    <div class="docente-info">
+                        <h4>ASUNTA CANCHARI MARTÍNEZ</h4>
+                        <p>Inicial/Intermedio</p>
+                        <span class="trayectoria-mini">Especialista en EBA INICIAL.</span>
+                    </div>
+                </div>
+                <div class="card-docente">
+                    <img src="img/docm_001.png">
+                    <div class="docente-info">
+                        <h4>JUANA SOSA REYES</h4>
+                        <p>Inicial/Intermedio</p>
+                        <span class="trayectoria-mini">Especialista en EBA INTERMEDIO.</span>
+                    </div>
+                </div>                
+        </div>
+
+        <div class="equipo-contenedor">
+            <h2 class="equipo-titulo">Plana Docente - CETPRO "Virgen del Carmen"</h2>
+            <div class="grid-dos-columnas">
+                <div class="card-docente">
+                    <img src="img/docm_001.png">
+                    <div class="docente-info">
+                        <h4>CARMEN ARGUMEDO HUAMÁN</h4>
+                        <p>Costura y Acabados</p>
+                        <span class="trayectoria-mini">ETP AUXILIAR TÉCNICO.</span>
+                    </div>
+                </div>
+                <div class="card-docente">
+                    <img src="img/docm_001.png">
+                    <div class="docente-info">
+                        <h4>LISBETH BERROCAL RUIZ</h4>
+                        <p>Peluquería Y Barbería</p>
+                        <span class="trayectoria-mini">ETP AUXILIAR TÉCNICO.</span>
+                    </div>
+                </div>
+                <div class="card-docente">
+                    <img src="img/docv_001.png">
+                    <div class="docente-info">
+                        <h4>GILBERTO CONTRERAS HUARACA</h4>
+                        <p>Diseño De Cerámica Utilitaria</p>
+                        <span class="trayectoria-mini">ETP AUXILIAR TÉCNICO.</span>
+                    </div>
+                </div>
+                <div class="card-docente">
+                    <img src="img/docv_001.png">
+                    <div class="docente-info">
+                        <h4>JORGE ALBERTO DÍAZ QUISPE</h4>
+                        <p>Asistente en Carpintería</p>
+                        <span class="trayectoria-mini">ETP AUXILIAR TÉCNICO.</span>
+                    </div>
+                </div>
+                <div class="card-docente">
+                    <img src="img/docm_001.png">
+                    <div class="docente-info">
+                        <h4>ANGÉLICA LUZA HINOSTROZA</h4>
+                        <p>Soporte Técnico Y Operaciones De Centros De Cómputo</p>
+                        <span class="trayectoria-mini">ETP AUXILIAR TÉCNICO.</span>
+                    </div>
+                </div>
+                <div class="card-docente">
+                    <img src="img/docm_001.png">
+                    <div class="docente-info">
+                        <h4>CARMEN SACCATOMA CAROY</h4>
+                        <p>Soporte Técnico Y Operaciones De Centros De Cómputo</p>
+                        <span class="trayectoria-mini">ETP AUXILIAR TÉCNICO.</span>
+                    </div>
+                </div>
+                <div class="card-docente">
+                    <img src="img/docm_001.png">
+                    <div class="docente-info">
+                        <h4>YUDI SULCA PILLIHUAMÁN</h4>
+                        <p>Peluquería Y Barbería</p>
+                        <span class="trayectoria-mini">ETP AUXILIAR TÉCNICO.</span>
+                    </div>
+                </div>
+                <div class="card-docente">
+                    <img src="img/docm_001.png">
+                    <div class="docente-info">
+                        <h4>PRUDENCIO VILCA PARIONA</h4>
+                        <p>Confección de Artículos de Cuero y Marroquinería</p>
+                        <span class="trayectoria-mini">ETP AUXILIAR TÉCNICO.</span>
+                    </div>
+                </div>
+                <div class="card-docente">
+                    <img src="img/docv_001.png">
+                    <div class="docente-info">
+                        <h4>GUIDO BENITO CURO</h4>
+                        <p>Cocina Y Servicios Gastronómicos</p>
+                        <span class="trayectoria-mini">ETP AUXILIAR TÉCNICO.</span>
+                    </div>
+                </div>
+                <div class="card-docente">
+                    <img src="img/docm_001.png">
+                    <div class="docente-info">
+                        <h4>LIZBETH MAYUMI LIZANA CHALCO</h4>
+                        <p>Cocina Y Servicios Gastronómicos</p>
+                        <span class="trayectoria-mini">ETP AUXILIAR TÉCNICO.</span>
+                    </div>
+                </div>                
+            </div>
+        </div>
+        <div class="equipo-contenedor">
+            <h2 class="equipo-titulo">Plana Docente - AREA MUSICAL</h2>
+            <div class="grid-dos-columnas">                
+                <div class="card-docente">
+                    <img src="img/docv_001.png">
+                    <div class="docente-info">
+                        <h4>SIMEÓN INTIQUILLA QUISPE</h4>
+                        <p>Arte Y Cultura</p>
+                        <span class="trayectoria-mini">Especialista en EBA AVANZADO.</span>
+                    </div>
+                </div>
+                <div class="card-docente">
+                    <img src="img/docv_001.png">
+                    <div class="docente-info">
+                        <h4>ALEX JAVIER PALOMINO VARGAS</h4>
+                        <p>Orquestando</p>
+                        <span class="trayectoria-mini">PROGRAMA DE COMPLEMENTACIÓN EDUCATIVA EN ARTE Y CULTURA.</span>
+                    </div>
+                </div>
+                <div class="card-docente">
+                    <img src="img/docv_001.png">
+                    <div class="docente-info">
+                        <h4>ISAÍ HUAMANÍ GONZALES</h4>
+                        <p>Orquestando</p>
+                        <span class="trayectoria-mini">PROGRAMA DE COMPLEMENTACIÓN EDUCATIVA EN ARTE Y CULTURA.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="equipo-contenedor">
+            <h2 class="equipo-titulo">Programas Universitarios</h2>
+            <div class="grid-dos-columnas">
+                <div class="card-docente">
+                    <img src="img/docm_001.png">
+                    <div class="docente-info">
+                        <h4>MERY DIANA TAMBRAC QUINTANA</h4>
+                        <p>Educación Superior Universitaria</p>
+                        <span class="trayectoria-mini">ADMISTRACIÓN UNIVERSIDAD CONTINENTAL.</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="contacto" class="content-section">
+        <h2 style="color: var(--dorado-inpe); text-align: center;">CONTACTO</h2>
+        <div style="text-align: center; padding: 40px;">
+            <div class="box-info" style="display: inline-block; min-width: 300px;">
+                <h3>Teléfono</h3>
+                <p style="font-size: 1.5rem;">066-492419</p>
+                <h3>Anexo</h3>
+                <p style="font-size: 1.5rem;">1310</p>
+            </div>
+            <p>Facebook | YouTube | WhatsApp</p>
+        </div>
+    </section>
+
+</div>
+<div id="footer-placeholder"></div>
+
+<script>
+    // 1. Cargar el Header y el Footer al iniciar
+    document.addEventListener("DOMContentLoaded", function() {
+        fetch('includes/header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header-placeholder').innerHTML = data;
+            });
+
+        fetch('includes/footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer-placeholder').innerHTML = data;
+            });
+    });
+
+    // 2. Tu función de cambiar secciones (mantenla)
+    function showSection(sectionId) {
+        const sections = document.querySelectorAll('.content-section');
+        sections.forEach(section => section.classList.remove('active'));
+        const targetSection = document.getElementById(sectionId);
+        if (targetSection) {
+            targetSection.classList.add('active');
+            window.scrollTo(0, 0);
+        }
+    }
+</script>
+</body>
+</html>

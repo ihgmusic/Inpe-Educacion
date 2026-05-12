@@ -1,0 +1,146 @@
+
+        :root {
+            --fondo-negro: #050505;
+            --tarjeta-gris: #121212;
+            --dorado-inpe: #c5a059;
+            --texto-blanco: #ffffff;
+            --texto-suave: #a0a0a0;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--fondo-negro);
+            color: var(--texto-blanco);
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        /* --- NAVEGACIÓN --- */
+        nav {
+            background: rgba(0, 0, 0, 0.95);
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            position: sticky;
+            top: 0;
+            border-bottom: 1px solid #222;
+            z-index: 1000;
+        }
+
+        .nav-links { display: flex; list-style: none; margin: 0; padding: 0; }
+        .nav-links li { position: relative; }
+        
+        .nav-links a, .dropbtn {
+            color: var(--texto-blanco);
+            text-decoration: none;
+            padding: 25px 15px;
+            display: block;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+
+        .nav-links a:hover, .dropdown:hover .dropbtn { color: var(--dorado-inpe); }
+
+        .dropdown-content {
+            display: none;
+            position: absolute;
+            background-color: #111;
+            min-width: 250px;
+            border: 1px solid #222;
+            top: 70px;
+        }
+
+        .dropdown-content a {
+            padding: 15px;
+            text-transform: none;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border-bottom: 1px solid #222;
+        }
+
+        .dropdown-content a img { width: 30px; }
+        .dropdown:hover .dropdown-content { display: block; }
+
+        /* --- MANEJO DE SECCIONES --- */
+        .content-section {
+            display: none;
+            padding: 60px 20px;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .content-section.active { display: block; }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; }
+
+        /* --- DISEÑO DE EQUIPO (NUEVA ESTRUCTURA) --- */
+        .equipo-contenedor {
+            background: var(--tarjeta-gris);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid #222;
+            margin-bottom: 40px;
+        }
+
+        .equipo-titulo {
+            color: var(--dorado-inpe);
+            border-bottom: 2px solid var(--dorado-inpe);
+            padding-bottom: 10px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        .grid-dos-columnas {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .card-docente {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border: 1px solid #333;
+        }
+
+        .card-docente img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--dorado-inpe);
+        }
+
+        .docente-info h4 { margin: 0; font-size: 1rem; color: #fff; }
+        .docente-info p { margin: 2px 0; font-size: 0.85rem; color: var(--dorado-inpe); }
+        .trayectoria-mini { font-size: 0.75rem; color: var(--texto-suave); font-style: italic; }
+
+        /* --- OTROS ESTILOS --- */
+        .box-info {
+            background: var(--tarjeta-gris);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--dorado-inpe);
+        }
+
+        footer { text-align: center; padding: 40px; border-top: 1px solid #222; font-size: 0.8rem; }
+
+        @media (max-width: 800px) {
+            .grid-dos-columnas { grid-template-columns: 1fr; }
+            .card-docente { flex-direction: column; text-align: center; }
+        }
+   

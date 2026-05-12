@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CETPRO Virgen del Carmen - INPE</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Se repiten los mismos estilos base para mantener consistencia */
+        :root {
+            --fondo-negro: #050505;
+            --tarjeta-gris: #121212;
+            --dorado-inpe: #c5a059;
+            --texto-blanco: #ffffff;
+            --texto-suave: #a0a0a0;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--fondo-negro);
+            color: var(--texto-blanco);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.95);
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            position: sticky;
+            top: 0;
+            border-bottom: 1px solid #222;
+        }
+
+        .btn-volver {
+            color: var(--texto-blanco);
+            text-decoration: none;
+            border: 1px solid var(--dorado-inpe);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+        }
+
+        .header-programa {
+            text-align: center;
+            padding: 60px 20px;
+            background: #0a0a0a;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+
+        .box-info {
+            background: var(--tarjeta-gris);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--dorado-inpe);
+        }
+
+        .grid-talleres {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .card-taller {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid #333;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card-taller:hover { border-color: var(--dorado-inpe); transform: scale(1.03); }
+        .card-taller i { font-size: 2rem; color: var(--dorado-inpe); display: block; margin-bottom: 10px; }
+
+        footer { text-align: center; padding: 40px; border-top: 1px solid #222; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <img src="img/lg_inpe.png" height="45">
+    <a href="index.html" class="btn-volver">← VOLVER AL INICIO</a>
+</nav>
+
+<header class="header-programa">
+    <img src="img/lg_cetpro.png" width="150" alt="Logo CETPRO">
+    <h1 style="font-size: 2.5rem; letter-spacing: 2px;">CETPRO "VIRGEN DEL CARMEN"</h1>
+    <p style="color: var(--dorado-inpe); text-transform: uppercase;">Formación Técnica Productiva</p>
+</header>
+
+<div class="container">
+    <section class="box-info">
+        <h2>Excelencia en Formación Laboral</h2>
+        <p>Nuestro Centro de Educación Técnico-Productiva (CETPRO) está licenciado para brindar capacitación técnica de calidad. Buscamos que cada estudiante desarrolle competencias laborales que faciliten su autoempleo o inserción en el mercado laboral al recuperar su libertad.</p>
+    </section>
+
+    <h2 style="color: var(--dorado-inpe); text-align: center; margin: 40px 0;">NUESTRAS ESPECIALIDADES</h2>
+    
+    <div class="grid-talleres">
+        <div class="card-taller"><h4>Carpintería</h4></div>
+        <div class="card-taller"><h4>Confección Textil</h4></div>
+        <div class="card-taller"><h4>Cocina y Gastronomía</h4></div>
+        <div class="card-taller"><h4>Cuero y Calzado</h4></div>
+        <div class="card-taller"><h4>Peluquería / Barbería</h4></div>
+        <div class="card-taller"><h4>Computación e Informática</h4></div>
+        <div class="card-taller"><h4>Cerámica</h4></div>
+    </div>
+
+    <section class="box-info" style="margin-top: 50px; background: #1a1a1a;">
+        <h2>Certificación y Empleabilidad</h2>
+        <p>Al culminar satisfactoriamente los módulos, los estudiantes reciben una certificación oficial que avala sus conocimientos técnicos, permitiéndoles generar microempresas o trabajar en talleres productivos externos.</p>
+    </section>
+</div>
+
+<footer>
+    <p>© 2026 INPE - CETPRO Virgen del Carmen. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>

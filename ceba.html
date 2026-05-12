@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CEBA Bicentenario - INPE</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        :root {
+            --fondo-negro: #050505;
+            --tarjeta-gris: #121212;
+            --dorado-inpe: #c5a059;
+            --texto-blanco: #ffffff;
+            --texto-suave: #a0a0a0;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: var(--fondo-negro);
+            color: var(--texto-blanco);
+            margin: 0;
+            line-height: 1.6;
+        }
+
+        nav {
+            background: rgba(0, 0, 0, 0.95);
+            height: 70px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 5%;
+            position: sticky;
+            top: 0;
+            border-bottom: 1px solid #222;
+            z-index: 1000;
+        }
+
+        .btn-volver {
+            color: var(--texto-blanco);
+            text-decoration: none;
+            border: 1px solid var(--dorado-inpe);
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-size: 0.8rem;
+            transition: 0.3s;
+        }
+
+        .btn-volver:hover { background: var(--dorado-inpe); color: black; }
+
+        .header-programa {
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('img/fondo_ceba.jpg'); /* Opcional */
+            background-size: cover;
+        }
+
+        .container { max-width: 1000px; margin: 0 auto; padding: 40px 20px; }
+
+        .box-info {
+            background: var(--tarjeta-gris);
+            padding: 30px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--dorado-inpe);
+        }
+
+        .grid-ciclos {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .card-ciclo {
+            background: #1a1a1a;
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid #333;
+            text-align: center;
+        }
+
+        .card-ciclo h3 { color: var(--dorado-inpe); margin-top: 0; }
+
+        footer { text-align: center; padding: 40px; border-top: 1px solid #222; font-size: 0.8rem; }
+    </style>
+</head>
+<body>
+
+<nav>
+    <img src="img/lg_inpe.png" height="45">
+    <a href="index.html" class="btn-volver">← VOLVER AL INICIO</a>
+</nav>
+
+<header class="header-programa">
+    <img src="img/lg_ceba.png" width="150" alt="Logo CEBA">
+    <h1 style="font-size: 2.5rem; letter-spacing: 2px;">CEBA BICENTENARIO</h1>
+    <p style="color: var(--dorado-inpe); text-transform: uppercase;">Educación Básica Alternativa</p>
+</header>
+
+<div class="container">
+    <section class="box-info">
+        <h2>¿Qué es el CEBA?</h2>
+        <p>El Centro de Educación Básica Alternativa (CEBA) "Bicentenario" brinda a los estudiantes internos la oportunidad de culminar sus estudios de primaria y secundaria. Nuestro enfoque busca fortalecer sus competencias ciudadanas y prepararlos para la reinserción social a través del conocimiento académico.</p>
+    </section>
+
+    <h2 style="text-align: center; color: var(--dorado-inpe);">NUESTROS NIVELES</h2>
+    
+    <div class="grid-ciclos">
+        <div class="card-ciclo">
+            <h3>Ciclo Inicial</h3>
+            <p>Alfabetización y primeros grados de educación básica.</p>
+        </div>
+        <div class="card-ciclo">
+            <h3>Ciclo Intermedio</h3>
+            <p>Consolidación de aprendizajes fundamentales de nivel primaria.</p>
+        </div>
+        <div class="card-ciclo">
+            <h3>Ciclo Avanzado</h3>
+            <p>Equivalente a la educación secundaria completa, habilitando al estudiante para estudios superiores.</p>
+        </div>
+    </div>
+
+    <section class="box-info" style="margin-top: 50px;">
+        <h2>Objetivos Estratégicos</h2>
+        <ul>
+            <li>Reducir el analfabetismo dentro del establecimiento.</li>
+            <li>Certificar oficialmente los estudios realizados.</li>
+            <li>Fomentar valores de convivencia y respeto.</li>
+        </ul>
+    </section>
+</div>
+
+<footer>
+    <p>© 2026 INPE - CEBA Bicentenario. Todos los derechos reservados.</p>
+</footer>
+
+</body>
+</html>
